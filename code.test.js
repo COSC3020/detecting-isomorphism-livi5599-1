@@ -28,14 +28,14 @@ g2 = [
 ];
 assert.strictEqual(are_isomorphic(g1, g2), false, 'Test 3 Failed: Different edge count');
 
-// g1 = [
-//   [0, 1, 1],
-//   [1, 0, 0],
-//   [1, 0, 0]
-// ];
-// g2 = [
-//   [0, 1, 0],
-//   [1, 0, 1],
-//   [0, 1, 0]
-// ];
-// assert.strictEqual(are_isomorphic(g1, g2), false, 'Test 4 Failed: Degree sequences don't match');
+g1 = [
+  [0, 1, 1],
+  [1, 0, 0],
+  [1, 0, 0]
+];
+g2 = [
+  [0, 1, 0],
+  [1, 0, 1],
+  [0, 1, 0]
+];
+assert.strictEqual(are_isomorphic(g1, g2), false, 'Test 4 Failed: Degree sequences don't match');
