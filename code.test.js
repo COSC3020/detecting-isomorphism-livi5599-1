@@ -39,3 +39,15 @@ g2 = [
   [0, 1, 0]
 ];
 assert.strictEqual(are_isomorphic(g1, g2), false, 'Test 4 Failed: Degree sequences do not match');
+
+g1 = [
+  [0, 1, 1],
+  [1, 0, 0],
+  [1, 0, 0]
+];
+g2 = [
+  [0, 0, 1],
+  [0, 0, 1],
+  [1, 1, 0]
+];
+assert.strictEqual(are_isomorphic(g1, g2), true, 'Test 5 Failed: Non-trivial isomorphic graphs not recognized');
