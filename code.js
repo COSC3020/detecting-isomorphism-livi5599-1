@@ -58,5 +58,57 @@ function are_isomorphic(graph1, graph2) {
             return false;
         }
     }
-    return true; //O(1)
+
+    let nodes = [];
+    let tempGraph = [];
+
+    for (let node = 0; node < graph1.length; node++) {
+        nodes.push(node);
+
+        tempGraph.push(Array(graph1.length).fill(0));
+    }
+    console.log("nodes = ", nodes);
+    console.log("tempGraph = ", tempGraph);
+
+    let perms = getAllPermutations(nodes);
+    console.log("perms = ", perms);
+    // console.log("perms[0] = ", perms[0]);
+    // console.log("perms[2] = ", perms[2]);
+
+    for (perm in perms) {
+        for (let row = 0; row < graph1.length; row++) {
+            for (let column = 0; column < graph1.length; column++) {
+                tempGraph[row][column] = graph1[perm[row]][perm[column]];
+                if (tempGraph == graph2) {
+                    return true;
+                }
+            }
+        }
+    }
+
+    return false; //O(1)
+}
+
+function getAllPermutations(arr) { // O(n!)
+    if (arr.length === 0) { // O(1)
+        return [[]]; // O(1)
+    }
+
+    if (arr.length === 1) { // O(1)
+        return [arr]; // O(1)
+    }
+
+    var results = []; // O(1)
+
+    for (var i = 0; i < arr.length; i++) { //// runs n times -> O(n) -> total runtime = O(n!)
+        var first = arr[i]; //// O(1)
+        var rest = arr.slice(0, i).concat(arr.slice(i + 1)); //// O(n^2)
+        var subPerms = getAllPermutations(rest); //// O(n!)
+        console.log("subPerms at i = ", i, " ", subPerms);
+        for (var j = 0; j < subPerms.length; j++) { //// runs n times -> O(n) -> total runtime = O(n^3)
+            results.push([first].concat(subPerms[j])); //// O(n^2)
+            console.log("results = ", results);
+        }
+    }
+    return results; // O(1)
 }
