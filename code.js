@@ -55,6 +55,13 @@ function are_isomorphic(graph1, graph2) {
         return false;
     }
 
+    let sortedG1DegSeq = [...g1DegSeq].sort((a, b) => a - b);
+    let sortedG2DegSeq = [...g2DegSeq].sort((a, b) => a - b);
+
+    if (JSON.stringify(sortedG1DegSeq) !== JSON.stringify(sortedG2DegSeq)) {
+        return false;
+    }
+
     // for (row = 0; row < graph1.length; row++) { //runs graph1 length v times -> O(v)
     //     if (JSON.stringify(graph1[row]) != JSON.stringify(graph2[row])) { //O(1)
     //         return false;
