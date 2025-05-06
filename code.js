@@ -49,8 +49,8 @@ function are_isomorphic(graph1, graph2) {
         g2DegSeq.push(degCounter); //O(1)
     }
 
-    g1DegSeq.sort((a, b) => a-b);
-    g2DegSeq.sort((a, b) => a-b);
+    // g1DegSeq.sort((a, b) => a-b);
+    // g2DegSeq.sort((a, b) => a-b);
     if (JSON.stringify(g1DegSeq) !== JSON.stringify(g2DegSeq)) { //O(1)
         return false;
     }
