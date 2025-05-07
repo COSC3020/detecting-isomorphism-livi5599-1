@@ -51,9 +51,9 @@ function are_isomorphic(graph1, graph2) {
 
     // g1DegSeq.sort((a, b) => a-b);
     // g2DegSeq.sort((a, b) => a-b);
-    if (JSON.stringify(g1DegSeq) !== JSON.stringify(g2DegSeq)) { //O(1)
-        return false;
-    }
+    // if (JSON.stringify(g1DegSeq) !== JSON.stringify(g2DegSeq)) { //O(1)
+    //     return false;
+    // }
 
     let sortedG1DegSeq = [...g1DegSeq].sort((a, b) => a - b);
     let sortedG2DegSeq = [...g2DegSeq].sort((a, b) => a - b);
