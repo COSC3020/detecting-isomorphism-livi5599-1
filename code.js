@@ -80,26 +80,41 @@ function are_isomorphic(graph1, graph2) {
     // console.log("perms[0] = ", perms[0]);
     // console.log("perms[2] = ", perms[2]);
 
-    for (let p = 0; p < perms.length; p++) {
-        let perm = perms[p];
-        
-        let tempGraph = [];
-        for (let node = 0; node < graph1.length; node++) {
-            tempGraph.push(Array(graph1.length).fill(0));
-        }
-
-        for (let row = 0; row < graph1.length; row++) {
-            for (let column = 0; column < graph1.length; column++) {
-                tempGraph[row][column] = graph1[perm[row]][perm[column]];
+    for (let perm of perms) {
+        let tmp = Array.from({ length: graph1.length }, () =>
+            Array(graph1.length).fill(0)
+        );
+        for (let r = 0; r < graph1.length; r++) {
+            for (let c = 0; c < graph1.length; c++) {
+                tmp[r][c] = graph1[perm[r]][perm[c]];
             }
         }
-
-        if (JSON.stringify(tempGraph) == JSON.stringify(graph2)) {
+        if (JSON.stringify(tmp) === JSON.stringify(graph2)) {
             return true;
         }
     }
+    return false;
 
-    return false; //O(1)
+    // for (let p = 0; p < perms.length; p++) {
+    //     let perm = perms[p];
+        
+    //     let tempGraph = [];
+    //     for (let node = 0; node < graph1.length; node++) {
+    //         tempGraph.push(Array(graph1.length).fill(0));
+    //     }
+
+    //     for (let row = 0; row < graph1.length; row++) {
+    //         for (let column = 0; column < graph1.length; column++) {
+    //             tempGraph[row][column] = graph1[perm[row]][perm[column]];
+    //         }
+    //     }
+
+    //     if (JSON.stringify(tempGraph) == JSON.stringify(graph2)) {
+    //         return true;
+    //     }
+    // }
+
+    // return false; //O(1)
 }
 
 function getAllPermutations(arr) { // O(n!)
