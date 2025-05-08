@@ -16,11 +16,11 @@ the function and run automatically when you commit through a GitHub action.
 
 What is the worst-case big $\Theta$ time complexity of your algorithm?
 
-The worst case time complexity is big $\Theta(V^2)$.  I got this from the sets of nested for loops, each with a worst case runtime of big $\Theta(V^2)$, where V is the number of nodes in the largest given graph.
+The worst case time complexity is big $\Theta(v!)$.  This comes from the getAllPermutations function, which has a runtime of O(n!).
 
 -----
 
-I asked ChatGPT for a description on what isomorphism was as a refresher, and I used other test code and got help from ChatGPT when writing the test code.
+I got help from ChatGPT and Ali.  I asked ChatGPT for a description on what isomorphism was as a refresher, and I used other test code and got help from ChatGPT when writing the test code.  Ali helped me understand what needed to be changed when certain tests weren't passing, which guided me in what I needed to implement.
 
 I started this assignment last semester.
 
