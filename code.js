@@ -95,10 +95,8 @@ function getAllPermutations(arr) { // O(n!)
         var first = arr[i]; // O(1)
         var rest = arr.slice(0, i).concat(arr.slice(i + 1)); // O(n)
         var subPerms = getAllPermutations(rest); // O(n!)
-        console.log("subPerms at i = ", i, " ", subPerms);
         for (var j = 0; j < subPerms.length; j++) { // runs n times -> O(n) -> total runtime = O(n^2)
             results.push([first].concat(subPerms[j])); // O(n)
-            console.log("results = ", results);
         }
     }
     return results; // O(1)
