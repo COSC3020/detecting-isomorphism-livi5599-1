@@ -1,4 +1,4 @@
-function are_isomorphic(graph1, graph2) { //O(v!)
+function are_isomorphic(graph1, graph2) { //O(v^2*v!)
     if (graph1.length != graph2.length) { //O(1)
         return false;
     }
