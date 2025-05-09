@@ -16,11 +16,11 @@ the function and run automatically when you commit through a GitHub action.
 
 What is the worst-case big $\Theta$ time complexity of your algorithm?
 
-The worst case time complexity is big $\Theta(v!)$.  This comes from the getAllPermutations function, which has a runtime of O(n!).
+The worst case time complexity is big $\Theta(v^2 * v!)$, where v is the number of nodes in each given graph (if the graphs are not the same length, the algorithm ends very early on).  This comes from the getAllPermutations function and what is done with each permutation.  The getAllPermutations function has a runtime of big $\Theta(v!)$, and for each permutation, big $\Theta(v^2)$ work is done on it (look at lines 71-75).  Combining these complexities, this makes the overall time complexity big $\Theta(v^2 * v!)$.
 
 -----
 
-I got help from ChatGPT and Ali.  I asked ChatGPT for a description on what isomorphism was as a refresher, and I used other test code and got help from ChatGPT when writing the test code.  Ali helped me understand what needed to be changed when certain tests weren't passing, which guided me in what I needed to implement.
+I got help from ChatGPT and Ali.  I asked ChatGPT for a description on what isomorphism was as a refresher, and I used other test code and got help from ChatGPT when writing the test code.  Ali helped me understand what needed to be changed when certain tests weren't passing, which guided me in what I needed to implement.  I also got the getAllPermutations function from my brute-force sorting implementation.
 
 I started this assignment last semester.
 
